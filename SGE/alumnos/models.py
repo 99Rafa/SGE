@@ -4,7 +4,7 @@
 from django.db import models
 
 
-class Alumnos(models.Model):
+class Alumno(models.Model):
     """Modelo de alumnos"""
 
     NoCtrl = models.CharField(max_length=15, primary_key=True, editable=False)

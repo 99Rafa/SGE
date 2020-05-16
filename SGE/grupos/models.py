@@ -1,3 +1,10 @@
+"""Modelo de grupos"""
+
+# Django
 from django.db import models
 
-# Create your models here.
+
+class Grupo(models.Model):
+
+    semestre = models.IntegerField()
+    grupo = models.CharField(max_length=3)
