@@ -2,6 +2,8 @@
 
 # Django
 from django.db import models
+
+# Modelos
 from django.contrib.auth.models import User
 
 
