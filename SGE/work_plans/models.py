@@ -13,8 +13,8 @@ from subjects.models import Subject
 class Workplan(models.Model):
     """Workplan model"""
 
-    id_user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    id_subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
 
     unit = models.TextField()
     gen_comp_develop = models.TextField()
@@ -40,4 +40,4 @@ class Workplan(models.Model):
 
     def __str__(self):
         """Return user id and subject id"""
-        return f'{self.id_user}, {self.id_subject}'
+        return f'{self.user}, {self.subject}'

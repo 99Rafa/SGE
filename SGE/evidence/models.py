@@ -10,5 +10,5 @@ from django.contrib.auth.models import User
 class Evidence(models.Model):
     """Evidence model"""
 
-    id_user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     file = models.BinaryField()
