@@ -18,7 +18,7 @@ class Subject(models.Model):
     no_units = models.IntegerField()
     theory_hours = models.IntegerField()
     practice_hours = models.IntegerField()
-    credit = models.IntegerField(verbose_name='credits')
+    credit = models.IntegerField(verbose_name='credits', db_column='credits')
 
     def __str__(self):
         """Returns subject name"""
