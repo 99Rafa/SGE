@@ -41,3 +41,12 @@ class Workplan(models.Model):
     def __str__(self):
         """Return user id and subject id"""
         return f'{self.user}, {self.subject}'
+
+
+class RequiredVisit(models.Model):
+    """Required visit model"""
+
+    workplan = models.ForeignKey(Workplan, on_delete=models.CASCADE)
+
+    date = models.DateTimeField()
+    destination = models.CharField(max_length=100)
