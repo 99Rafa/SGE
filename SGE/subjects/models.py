@@ -5,12 +5,14 @@ from django.db import models
 
 # Models
 from groups.models import Group
+from students.models import Student
 
 
 class Subject(models.Model):
     """Subject model"""
 
     id_group = models.ForeignKey(Group, on_delete=models.DO_NOTHING)
+    students = models.ManyToManyField(Student)
 
     name = models.CharField(max_length=50)
     no_units = models.IntegerField()
