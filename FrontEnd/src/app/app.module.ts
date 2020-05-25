@@ -7,13 +7,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MenuComponent } from './menu/menu.component';
+import { EvidenciasComponent } from './evidencias/evidencias.component';
+import { PlanComponent } from './plan/plan.component';
+import { GruposComponent } from './grupos/grupos.component';
+import { ConfigComponent } from './config/config.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SidebarComponent,
-    ProfileComponent
+    ProfileComponent,
+    MenuComponent,
+    EvidenciasComponent,
+    PlanComponent,
+    GruposComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,

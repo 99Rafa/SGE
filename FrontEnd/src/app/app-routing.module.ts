@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MenuComponent } from './menu/menu.component';
+import { EvidenciasComponent } from './evidencias/evidencias.component';
+import { GruposComponent } from './grupos/grupos.component';
+import { ConfigComponent } from './config/config.component';
 
 
 const routes: Routes = [
@@ -14,21 +18,36 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    children:[
-      {
-        path: 'menu',
-        component: SidebarComponent,
-      }
-    ]
   },
   {
-    path: 'menu',
+    path: 'inicio',
     component: SidebarComponent,
     children:[
       {
-        path: 'perfil',
-        component: ProfileComponent
+        path: '',
+        component: MenuComponent,
+      },
+      {
+        path: 'menu',
+        component: MenuComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
+        path: 'evidencias',
+        component: EvidenciasComponent,
+      },
+      {
+        path: 'grupos',
+        component: GruposComponent,
+      },
+      {
+        path: 'config',
+        component: ConfigComponent,
       }
+
     ]
   }
 ];
