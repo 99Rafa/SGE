@@ -13,5 +13,5 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    profile_picture = models.BinaryField()
+    profile_picture = models.BinaryField(null=True)
     department = models.CharField(max_length=100)
