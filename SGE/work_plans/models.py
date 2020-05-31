@@ -6,7 +6,7 @@ from django.contrib.postgres.fields import ArrayField
 
 
 # Models
-from django.contrib.auth.models import User
+from users.models import User
 from subjects.models import Subject
 
 

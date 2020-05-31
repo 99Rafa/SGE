@@ -6,7 +6,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.core.validators import MaxValueValidator
 
 # Models
-from django.contrib.auth.models import User
+from users.models import User
 from students.models import Student
 from subjects.models import Subject
 
