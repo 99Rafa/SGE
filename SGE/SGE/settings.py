@@ -144,7 +144,7 @@ REST_FRAMEWORK = {
     )
 }
 
-import sys.argv
+from sys import argv
 if 'test' in argv:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
