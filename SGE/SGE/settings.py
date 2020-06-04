@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
     # Local
     'groups',
-    'qualifications',
+    'grades',
     'students',
     'subjects',
     'work_plans',
