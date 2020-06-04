@@ -1,4 +1,4 @@
-"""Qualification models"""
+"""Grade models"""
 
 # Django
 from django.db import models
@@ -11,11 +11,10 @@ from students.models import Student
 from subjects.models import Subject
 
 
-class Qualification(models.Model):
-    """Qualification model"""
+class Grade(models.Model):
+    """Grade model"""
 
     subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
-    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     student = models.ForeignKey(Student, on_delete=models.DO_NOTHING,)
 
     score = ArrayField(
