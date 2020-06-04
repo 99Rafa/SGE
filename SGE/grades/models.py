@@ -14,7 +14,7 @@ from subjects.models import Subject
 class Grade(models.Model):
     """Grade model"""
 
-    subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+    subject = models.ForeignKey(Subject, related_name='grades', on_delete=models.DO_NOTHING)
     student = models.ForeignKey(Student, on_delete=models.DO_NOTHING,)
 
     score = ArrayField(
