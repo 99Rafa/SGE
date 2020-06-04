@@ -16,7 +16,7 @@ class Qualification(models.Model):
 
     subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    no_ctrl_student = models.ForeignKey(Student, on_delete=models.DO_NOTHING,)
+    student = models.ForeignKey(Student, on_delete=models.DO_NOTHING,)
 
     score = ArrayField(
         base_field=models.IntegerField(
@@ -24,8 +24,8 @@ class Qualification(models.Model):
         ),
         size=6
     )
-    final_score = models.FloatField()
+    final_score = models.FloatField(null=True)
 
     def __str__(self):
         """Return control number and subject id"""
-        return f'{self.no_ctrl_student}, {self.subject}'
+        return f'{self.student}, {self.subject}'
