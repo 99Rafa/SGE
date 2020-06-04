@@ -2,7 +2,10 @@
 
 # Api
 from rest_framework.generics import RetrieveAPIView
+
+# Permissions
 from rest_framework.permissions import IsAuthenticated
+from .permissions import IsOwner
 
 # Models
 from users.models import User
@@ -15,7 +18,10 @@ class UserDetailView(RetrieveAPIView):
     """User detail view"""
 
     serializer_class = ProfileSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [
+        IsAuthenticated,
+        IsOwner
+    ]
 
     lookup_field = 'username'
     lookup_url_kwarg = 'username'
