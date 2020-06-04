@@ -41,3 +41,28 @@ class LoginTestCase(APITestCase):
             data=data
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+
+class ProfileTestCase(APITestCase):
+
+    profile_path = '/user/test-user/'
+
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='test-user',
+            password='super-secure-password',
+        )
+        self.token = Token.objects.create(user=self.user)
+        self.api_authentication()
+
+    def api_authentication(self):
+        self.client.credentials(HTTP_AUTHORIZATION=f'TOKEN {self.token}')
+
+    def test_profile_view_authenticated(self):
+        response = self.client.get(self.profile_path)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_profile_view_unauthenticated(self):
+        self.client.force_authenticate(user=None)
+        response = self.client.get(self.profile_path)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
