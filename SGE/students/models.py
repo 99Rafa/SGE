@@ -7,7 +7,7 @@ from django.db import models
 class Student(models.Model):
     """Student model"""
 
-    no_ctrl = models.CharField(max_length=12, primary_key=True)
+    no_ctrl = models.CharField(max_length=12, primary_key=True, unique=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
 
