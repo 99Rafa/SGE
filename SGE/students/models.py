@@ -14,3 +14,7 @@ class Student(models.Model):
     def __str__(self):
         """Return control number"""
         return f'{self.no_ctrl}'
+
+    def full_name(self):
+        """Returns the full name of the student"""
+        return f'{self.last_name} {self.first_name}'
