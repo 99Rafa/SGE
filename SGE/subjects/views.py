@@ -2,14 +2,19 @@
 
 # Api
 from rest_framework import status
+from rest_framework.generics import RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 
 # Permissions
 from rest_framework.permissions import IsAuthenticated
+from subjects.permissions import IsOwner
 
 # Models
 from subjects.models import Subject
+
+# Serializers
+from subjects.serializers import ListStudentsSerializer
 
 
 @api_view(['GET'])
@@ -33,3 +38,12 @@ def get_subjects_view(request):
         data=data,
         status=status.HTTP_200_OK
     )
+
+class ListGradesView(RetrieveAPIView):
+
+    serializer_class = ListStudentsSerializer
+    permission_classes = [
+        IsAuthenticated,
+        IsOwner
+    ]
+    queryset = Subject.objects.all()
