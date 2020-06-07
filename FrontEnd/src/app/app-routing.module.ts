@@ -7,6 +7,8 @@ import { MenuComponent } from './menu/menu.component';
 import { EvidenciasComponent } from './evidencias/evidencias.component';
 import { GruposComponent } from './grupos/grupos.component';
 import { ConfigComponent } from './config/config.component';
+import { PlanComponent } from './plan/plan.component';
+import { LoginGuard } from './login.guard';
 
 
 const routes: Routes = [
@@ -22,6 +24,7 @@ const routes: Routes = [
   {
     path: 'inicio',
     component: SidebarComponent,
+    canActivate:[LoginGuard],
     children:[
       {
         path: '',
@@ -46,6 +49,10 @@ const routes: Routes = [
       {
         path: 'config',
         component: ConfigComponent,
+      },
+      {
+        path: 'plan',
+        component: PlanComponent,
       }
 
     ]
