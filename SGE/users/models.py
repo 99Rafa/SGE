@@ -11,5 +11,5 @@ class User(AbstractUser):
     Proxy model that extends the base data with other information
     """
 
-    profile_picture = models.BinaryField(null=True)
+    profile_picture = models.TextField(null=True)
     department = models.CharField(max_length=100)
