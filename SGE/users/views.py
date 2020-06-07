@@ -1,7 +1,7 @@
 """User views"""
 
 # Api
-from rest_framework.generics import RetrieveAPIView
+from rest_framework.generics import RetrieveUpdateAPIView
 
 # Permissions
 from rest_framework.permissions import IsAuthenticated
@@ -14,7 +14,7 @@ from users.models import User
 from users.serializers import ProfileSerializer
 
 
-class UserDetailView(RetrieveAPIView):
+class UserDetailView(RetrieveUpdateAPIView):
     """User detail view"""
 
     serializer_class = ProfileSerializer
