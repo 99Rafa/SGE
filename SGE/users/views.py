@@ -5,11 +5,9 @@ from django.shortcuts import get_object_or_404
 
 # Api
 from rest_framework.generics import RetrieveUpdateAPIView
-from djoser.conf import settings
 
 # Permissions
 from rest_framework.permissions import IsAuthenticated
-from .permissions import IsOwner
 
 # Models
 from users.models import User
