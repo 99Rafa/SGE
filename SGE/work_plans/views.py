@@ -6,6 +6,7 @@ from rest_framework.generics import (
     RetrieveUpdateDestroyAPIView,
     ListAPIView
 )
+from rest_framework import serializers
 
 # Permissions
 from rest_framework.permissions import IsAuthenticated
@@ -21,6 +22,16 @@ from work_plans.serializers import (
     DetailWorkPlanSerializer,
     ListWorkPlanSerializer
 )
+
+
+class CreateWorkplanView(CreateAPIView):
+
+    serializer_class = DetailWorkPlanSerializer
+    permission_classes = [IsAuthenticated]
+    queryset = Workplan.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
 class ListWorkPlanView(ListAPIView):
