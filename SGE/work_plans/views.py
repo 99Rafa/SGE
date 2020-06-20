@@ -6,16 +6,13 @@ from rest_framework.generics import (
     RetrieveUpdateDestroyAPIView,
     ListAPIView
 )
-from rest_framework import serializers
 
 # Permissions
 from rest_framework.permissions import IsAuthenticated
 from work_plans.permissions import IsOwnerOfSubject, IsOwnerOfWorkplan
-from subjects import permissions as subjectPermissions
 
 # Models
 from work_plans.models import Workplan, RequiredVisit
-from subjects.models import Subject
 
 # Serializers
 from work_plans.serializers import (
