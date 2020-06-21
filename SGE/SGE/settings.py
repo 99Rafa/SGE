@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from sys import argv
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'subjects',
     'work_plans',
     'users',
+    'evidence'
 ]
 
 MIDDLEWARE = [
@@ -146,11 +148,10 @@ REST_FRAMEWORK = {
     )
 }
 
-CORS_ORIGIN_WHITELIST =[
+CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200'
 ]
 
-from sys import argv
 if 'test' in argv:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
