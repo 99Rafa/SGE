@@ -11,4 +11,4 @@ class EvidenceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Evidence
-        fields = ['subject', 'title', 'file']
+        fields = ['id', 'subject', 'title', 'file']
