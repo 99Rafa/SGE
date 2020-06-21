@@ -29,7 +29,6 @@ class IsOwnerOfWorkplan(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         """Cheks if the user is the owner of the workplan"""
-        print(request.user, obj.user)
         if request.user == obj.user:
             return True
         else:
