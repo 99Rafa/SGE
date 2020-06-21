@@ -4,9 +4,10 @@
 from django.urls import path
 
 # Views
-from evidence.views import EvidenceView, DetailEvideceView
+from evidence.views import ListEvidenceView, DetailEvideceView, CreateEvidenceView
 
 urlpatterns = [
-    path('list_create/', EvidenceView.as_view()),
+    path('create/', CreateEvidenceView.as_view()),
+    path('list/<pk>/', ListEvidenceView.as_view()),
     path('detail/<pk>/', DetailEvideceView.as_view()),
 ]
