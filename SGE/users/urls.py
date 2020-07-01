@@ -7,7 +7,6 @@ from django.urls import path, include
 from users import views
 
 urlpatterns = [
-    path('', include('djoser.urls')),
     path('', include('djoser.urls.authtoken')),
-    path('<str:username>/', views.UserDetailView.as_view())
+    path('profile/', views.UserDetailView.as_view()),
 ]
